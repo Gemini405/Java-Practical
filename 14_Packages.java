@@ -1,39 +1,43 @@
-import java.awt.Button;
-import java.awt.Frame;
-import java.awt.Label;
-import java.awt.TextField;
+import java.awt.*;
 
-class MyLoginWindow extends Frame
-{
-    TextField name, pass;
-    Button b1, b2;
-    
+class MyLoginWindow extends Frame {
     MyLoginWindow() {
+        TextField name, pass;
+        Button b1, b2;
+
+        Label n = new Label("Name:", Label.CENTER);
+        Label p = new Label("Password:", Label.CENTER);
+
+        name = new TextField(20);
+        pass = new TextField(20);
+        pass.setEchoChar('*');
+
+        b1 = new Button("Submit");
+        b2 = new Button("Cancel");
+
         this.setLayout(null);
-        Label n=new Label("Name:",Label.CENTER);
-        Label p=new Label("password:",Label.CENTER);
-        name=new TextField(20);
-        pass=new TextField(20);
-        pass.setEchoChar('#');
-        b1=new Button("Submit");
-        b2=new Button("Cancel");
+
         this.add(n);
         this.add(name);
         this.add(p);
         this.add(pass);
         this.add(b1);
         this.add(b2);
-        n.setBounds(70,90,90,60);
-        p.setBounds(70,130,90,60);
-        name.setBounds(200, 100, 90, 20);
-        pass.setBounds(200, 140, 90, 20);
-        b1.setBounds(100, 260, 70, 40);
-        b2.setBounds(180, 260, 70, 40);
+
+        n.setBounds(70, 90, 90, 20);
+        name.setBounds(200, 90, 90, 20);
+
+        p.setBounds(70, 130, 90, 20);
+        pass.setBounds(200, 130, 90, 20);
+
+        b1.setBounds(100, 200, 60, 30);
+        b2.setBounds(180, 200, 60, 30);
     }
+
     public static void main(String[] args) {
-        MyLoginWindow ml = new MyLoginWindow();
-        ml.setVisible(true);
-        ml.setSize(400, 400);
-        ml.setTitle("my login window");
+        MyLoginWindow m1 = new MyLoginWindow();
+        m1.setVisible(true);
+        m1.setSize(400, 400);
+        m1.setTitle("Login");
     }
 }
